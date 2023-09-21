@@ -18,7 +18,7 @@ Este repositório contém o código-fonte para um projeto JavaScript que permite
 
 ## Contribuição
 
-Ficamos felizes com contribuições para melhorar este projeto. Se você tiver sugestões ou correções, sinta-se à vontade para criar um pull request.
+Ficamos felizes com contribuições para melhorar o projeto. Se você tiver sugestões ou correções, sinta-se à vontade para criar um pull request.
 
 ## Licença
 
