@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <title>Ordem de Serviço</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- Importa a biblioteca Font Awesome para obter o ícone do GitHub -->
+
   <link rel="icon" type="image/png" sizes="16x16" href="sea_grad.png">
 </head>
 <!-- Google tag (gtag.js) -->
@@ -21,48 +23,17 @@
 
 
   <form id="formulario">
-    <h1>ORDEM DE SERVIÇO</h1>
+    <h1>GERADOR DE O.S</h1>
     <label for="tipoos">TIPO DE O.S:</label>
     <select id="tipoos" name="tipoos" required>
-      <option value="" selected disabled>Selecione</option>
+      <option value="">Selecione</option>
       <option value="suporte">SUPORTE - SEM INTERNET</option>
       <option value="suporteint">SUPORTE-INTERNET LENTA</option>
       <option value="manutencao">MANUTENÇÃO</option>
+      <option value="recolhimento">RECOLHIMENTO DE COMODATO</option>
 
     </select>
-
-    <label for="prioridade">PRIORIDADE:</label>
-    <select id="prioridade" name="prioridade" required>
-      <option value="" selected disabled>Selecione</option>
-      <option value="PADRÃO">PADRÃO</option>
-      <option value="REINCIDENTE">REINCIDENTE</option>
-      <option value="REVERSÃO DE CANCELAMENTO">REVERSÃO DE CANCELAMENTO</option>
-    </select>
-
-    <label for="responsavel">RESPONSÁVEL QUE RECEBERÁ A EQUIPE:</label>
-    <input type="text" id="responsavel" name="responsavel" required>
-
-    <label for="telefone">TELEFONE:</label>
-    <input type="text" id="telefone" name="telefone" required>
-
-    <label for="horario">MELHOR HORÁRIO PARA ATENDIMENTO:</label>
-    <select id="horario" name="horario" required>
-      <option value="" selected disabled>Selecione</option>
-      <option value="manha">MANHÃ</option>
-      <option value="tarde">TARDE</option>
-      <option value="comercial">COMERCIAL</option>
-    </select>
-
-    <label for="relato">RELATO:</label>
-    <textarea id="relato" name="relato" rows="3" placeholder="Relatar o problema identificado" required></textarea>
-
-    <label for="causa">POSSÍVEL CAUSA:</label>
-    <textarea id="causa" name="causa" rows="3" placeholder="Somente se tiver identificado"></textarea>
-
-    <label for="orientacao">ORIENTAÇÃO PARA OS TÉCNICOS:</label>
-    <textarea id="orientacao" name="orientacao" rows="4"
-      placeholder="O que os técnicos de campo precisam realizar" required></textarea>
-
+    <!--==================-->
     <div class="form-row">
       <div class="form-group">
         <label for="cidade">Cidade:</label>
@@ -86,12 +57,46 @@
     </div>
 
     <label for="localizacao">Localização, cto, porta e metragem:</label>
-    <textarea id="localizacao" name="localizacao" rows="4" required ></textarea>
+    <textarea id="localizacao" name="localizacao" rows="4" required></textarea>
+    <!--==================-->
+
+    <label for="prioridade">PRIORIDADE:</label>
+    <select id="prioridade" name="prioridade" required>
+      <option value="">Selecione</option>
+      <option value="PADRÃO">PADRÃO</option>
+      <option value="REINCIDENTE">REINCIDENTE</option>
+      <option value="REVERSÃO DE CANCELAMENTO">REVERSÃO DE CANCELAMENTO</option>
+    </select>
+
+    <label for="responsavel">RESPONSÁVEL QUE RECEBERÁ A EQUIPE:</label>
+    <input type="text" id="responsavel" name="responsavel" required>
+
+    <label for="telefone"></label>
+   
+
+    <label for="horario">MELHOR HORÁRIO PARA ATENDIMENTO:</label>
+    <select id="horario" name="horario" required>
+      <option value="" selected disabled>Selecione</option>
+      <option value="manha">MANHÃ</option>
+      <option value="tarde">TARDE</option>
+      <option value="comercial">COMERCIAL</option>
+    </select>
+
+    <label for="relato">RELATO:</label>
+    <textarea id="relato" name="relato" rows="3" placeholder="Relatar o problema identificado"></textarea>
+
+    <label for="causa">POSSÍVEL CAUSA:</label>
+    <textarea id="causa" name="causa" rows="2" placeholder="Somente se tiver identificado"></textarea>
+
+    <label for="orientacao">ORIENTAÇÃO PARA OS TÉCNICOS:</label>
+    <textarea id="orientacao" name="orientacao" rows="3"
+      placeholder="O que os técnicos de campo precisam realizar"></textarea>
+
 
 
     <!--checkbox-->
     <label for="modelo">OUTRAS INFORMAÇÕES: (Opcionais)</label><br>
-    
+
     <div class="checkbox">
       <label class="checkla"><input class="checkin" type="checkbox" id="chkPotenciaOnu"> Potência ONU </label>
       <label class="checkla"><input class="checkin" type="checkbox" id="chkGpon" value="sim"> GPON</label>
@@ -111,7 +116,8 @@
       </div>
       <div id="campoPotenciaOlt" style="display: none;">
         <label for="potenciaOlt">Potência OLT:</label>
-        <input type="text" id="potenciaOlt" placeholder="Potência do sinal óptico que chega até a OLT (Somente for identificado)">
+        <input type="text" id="potenciaOlt"
+          placeholder="Potência do sinal óptico que chega até a OLT (Somente for identificado)">
       </div>
 
       <div id="campoGpon" style="display: none;">
@@ -163,6 +169,86 @@
     <label for="validador">Validador:</label>
     <input type="text" id="validador" name="validador">
     <div>
+      <!--creditos-->
+      <footer>
+          <p id="creditos">Desenvolvido por Matheus Henrique</p>
+          <a id="github-icon-link" href="https://github.com/matheus-hash
+" target="_blank">
+              <i id="github-icon" class="fab fa-github"></i> <!-- Ícone do GitHub -->
+          </a>
+      </footer>
+      
+      <style>
+          footer {
+              position: fixed;
+              bottom: 20px;
+              left: 20px;
+              background-color: #f0f0f0;
+              padding: 10px;
+              border-radius: 10px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              transition: background-color 0.3s ease; /* Adiciona uma transição suave para a mudança de cor de fundo */
+              display: flex;
+              align-items: center;
+          }
+
+          footer:hover {
+              background-color: #d3d3d3; /* Altera a cor de fundo ao passar o mouse */
+          }
+
+          #creditos {
+              margin: 0;
+              font-size: 14px;
+              margin-right: 10px; /* Adiciona margem à direita para separar o ícone do texto */
+          }
+
+          #github-icon {
+              color: #333; /* Cor do ícone */
+              font-size: 20px; /* Tamanho do ícone */
+          }
+
+          #github-icon-link {
+              text-decoration: none; /* Remove a sublinhado padrão do link */
+              color: #333; /* Cor do ícone */
+          }
+      </style><style>
+          footer {
+              position: fixed;
+              bottom: 20px;
+              left: 20px;
+              background-color: #f0f0f0;
+              padding: 10px;
+              border-radius: 10px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              transition: background-color 0.3s ease; /* Adiciona uma transição suave para a mudança de cor de fundo */
+              display: flex;
+              align-items: center;
+          }
+
+          footer:hover {
+              background-color: #d3d3d3; /* Altera a cor de fundo ao passar o mouse */
+          }
+
+          #creditos {
+              margin: 0;
+              font-size: 14px;
+              margin-right: 10px; /* Adiciona margem à direita para separar o ícone do texto */
+          }
+
+          #github-icon {
+              color: #333; /* Cor do ícone */
+              font-size: 20px; /* Tamanho do ícone */
+          }
+
+          #github-icon-link {
+              text-decoration: none; /* Remove a sublinhado padrão do link */
+              color: #333; /* Cor do ícone */
+          }
+      </style>
+      
+      
+      <!--fim dos creditos-->
+      
       <button id="btnConcluir" class="btn btn-white btn-animated text-box">Concluir</button>
     </div>
 
@@ -174,6 +260,8 @@
         <button id="btnCopiar">Copiar</button>
       </div>
     </div>
+
+
 
     <script src="script.js"></script>
 
