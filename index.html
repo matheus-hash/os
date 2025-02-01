@@ -24,41 +24,7 @@
 
   <form id="formulario">
     <h1>GERADOR DE O.S</h1>
-    <label for="tipoos">TIPO DE O.S:</label>
-    <select id="tipoos" name="tipoos" required>
-      <option value="">Selecione</option>
-      <option value="suporte">SUPORTE - SEM INTERNET</option>
-      <option value="suporteint">SUPORTE-INTERNET LENTA</option>
-      <option value="manutencao">MANUTENÇÃO</option>
-      <option value="recolhimento">RECOLHIMENTO DE COMODATO</option>
 
-    </select>
-    <!--==================-->
-    <div class="form-row">
-      <div class="form-group">
-        <label for="cidade">Cidade:</label>
-        <input type="text" id="cidade" name="cidade">
-      </div>
-      <div class="form-group">
-        <label for="bairro">Bairro:</label>
-        <input type="text" id="bairro" name="bairro">
-      </div>
-    </div>
-
-    <div class="form-row">
-      <div class="form-group">
-        <label for="logradouro">Logradouro:</label>
-        <input type="text" id="logradouro" name="logradouro">
-      </div>
-      <div class="form-group">
-        <label for="complemento">Complemento:</label>
-        <input type="text" id="complemento" name="complemento">
-      </div>
-    </div>
-
-    <label for="localizacao">Localização, cto, porta e metragem:</label>
-    <textarea id="localizacao" name="localizacao" rows="4" required></textarea>
-    <!--==================-->
 
     <label for="prioridade">PRIORIDADE:</label>
     <select id="prioridade" name="prioridade" required>
@@ -68,10 +34,49 @@
       <option value="REVERSÃO DE CANCELAMENTO">REVERSÃO DE CANCELAMENTO</option>
     </select>
 
+      <label for="titular">TITULAR:</label>
+      <input type="text" id="titular" name="titular" required>
+
+    
+    <label for="tipoos">TIPO DE O.S:</label>
+    <select id="tipoos" name="tipoos" required>
+      <option value="">Selecione</option>
+      <option value="up" id="up">UP - MUDANÇA DE COMODATO</option>
+      <option value="suporte1">SUPORTE</option>
+      <option value="suporte">SUPORTE SEM CONEXÃO</option>
+      <option value="suporteint">SUPORTE - INTERNET LENTA</option>
+      <option value="suportereset">SUPORTE - RESETADO</option>
+      <option value="suportetrocasenha">SUPORTE - TROCA DE SENHA</option>
+      <option value="suporteplano">SUPORTE - PLANO CONTRATADO</option>
+      <option value="suporteping">SUPORTE - PING ALTO</option>
+      <option value="suportealc">SUPORTE - ALCANCE DO SINAL</option>
+      <option value="suportetroca">SUPORTE - TROCA DO EQUIPAMENTO</option>
+      <option value="manutencao1">MANUTENÇÃO</option>
+      <option value="manutencao">MANUTENÇÃO SEM CONEXÃO</option>
+      <option value="manutencaodrop">MANUTENÇÃO DROP ROMPIDO</option>
+      <option value="manutencaolink">MANUTENÇÃO LINK-LOSS/OFFLINE</option>
+      <option value="manutencaopotencia">MANUTENÇÃO POTÊNCIA ATENUADA</option>
+      
+
+    </select>
+    
+    <label for="localizacao">ENDEREÇO, Localização, CTO, porta e metragem:</label>
+    <textarea id="localizacao" name="localizacao" rows="5" required placeholder="Exemplo:
+      CIDADE:
+      BAIRRO:  
+      RUA: 
+      -1.36894382794466, -48.254489286597
+      CTO_PA_BVS_A22c4 Porta 15
+      120 metros
+      "
+      
+      ></textarea>
+    <!--==================-->
+
+
     <label for="responsavel">RESPONSÁVEL QUE RECEBERÁ A EQUIPE:</label>
     <input type="text" id="responsavel" name="responsavel" required>
 
-    <label for="telefone"></label>
    
 
     <label for="horario">MELHOR HORÁRIO PARA ATENDIMENTO:</label>
@@ -82,99 +87,111 @@
       <option value="comercial">COMERCIAL</option>
     </select>
 
-    <label for="relato">RELATO:</label>
-    <textarea id="relato" name="relato" rows="3" placeholder="Relatar o problema identificado"></textarea>
-
-    <label for="causa">POSSÍVEL CAUSA:</label>
-    <textarea id="causa" name="causa" rows="2" placeholder="Somente se tiver identificado"></textarea>
+    
+    <div id="relato-field">
+      <label for="relato">RELATO:</label>
+      <textarea id="relato" name="relato" rows="4" placeholder="Relatar o problema identificado" maxlength="200"></textarea>
+      
+    </div>
+    
+    <div id="causa-field">
+      <label for="causa">POSSÍVEL CAUSA:</label>
+      <textarea id="causa" name="causa" rows="2" placeholder="Somente se tiver identificado"></textarea>
+    </div>
+    
+    
 
     <label for="orientacao">ORIENTAÇÃO PARA OS TÉCNICOS:</label>
-    <textarea id="orientacao" name="orientacao" rows="3"
+    <textarea id="orientacao" name="orientacao" rows="4"
       placeholder="O que os técnicos de campo precisam realizar"></textarea>
 
 
 
     <!--checkbox-->
-    <label for="modelo">OUTRAS INFORMAÇÕES: (Opcionais)</label><br>
+    <div class="outras-info" id="outrasinfo-field">
+      
+      <label for="modelo" id="opicionais">OUTRAS INFORMAÇÕES: (Opcionais)</label><br>
 
-    <div class="checkbox">
-      <label class="checkla"><input class="checkin" type="checkbox" id="chkPotenciaOnu"> Potência ONU </label>
-      <label class="checkla"><input class="checkin" type="checkbox" id="chkGpon" value="sim"> GPON</label>
-      <label class="checkla"><input class="checkin" type="checkbox" id="chkPPPoE" value="sim"> PPPoE</label>
-      <label class="checkla"><input class="checkin" type="checkbox" id="chkPotenciaOlt"> Potência OLT</label>
-      <label class="checkla"><input class="checkin" type="checkbox" id="chkAlarmes"> Alarmes do equipamento</label>
-      <label class="checkla"><input class="checkin" type="checkbox" id="chkocorre"> Dispositivos em que ocorre</label>
-      <label class="checkla"><input class="checkin" type="checkbox" id="chkTemperatura"> Temperatura</label>
-      <label class="checkla"><input class="checkin" type="checkbox" id="chkModelo"> Modelo do equipamento</label>
-      <label class="checkla"><input class="checkin" type="checkbox" id="chkOutros"> Outros</label> <br><br>
+      <div class="checkbox" id="outrasinfo">
+        <label class="checkla"><input class="checkin" type="checkbox" id="chkPotenciaOnu"> Potência ONU </label>
+        <label class="checkla"><input class="checkin" type="checkbox" id="chkGpon" value="sim"> GPON</label>
+        <label class="checkla"><input class="checkin" type="checkbox" id="chkPPPoE" value="sim"> PPPoE</label>
+        <label class="checkla"><input class="checkin" type="checkbox" id="chkPotenciaOlt"> Potência OLT</label>
+        <label class="checkla"><input class="checkin" type="checkbox" id="chkAlarmes"> Alarmes do equipamento</label>
+        <label class="checkla"><input class="checkin" type="checkbox" id="chkocorre"> Dispositivos em que ocorre</label>
+        <label class="checkla"><input class="checkin" type="checkbox" id="chkTemperatura"> Temperatura</label>
+        <label class="checkla"><input class="checkin" type="checkbox" id="chkModelo"> Modelo do equipamento</label>
+        <label class="checkla"><input class="checkin" type="checkbox" id="chkOutros"> Outros</label> <br><br>
 
-      <!--Campos que iniciam ocultos-->
-      <div id="campoPotenciaOnu" style="display: none;">
-        <label id="nome-potencia-onu" for="potencia-onu" class="hidden">POTÊNCIA ONU:</label>
-        <input type="text" id="potencia-onu" name="potencia-onu"
-          placeholder="Potência do sinal óptico que chega até a ONU (Somente for identificado)" class="hidden">
-      </div>
-      <div id="campoPotenciaOlt" style="display: none;">
-        <label for="potenciaOlt">Potência OLT:</label>
-        <input type="text" id="potenciaOlt"
-          placeholder="Potência do sinal óptico que chega até a OLT (Somente for identificado)">
-      </div>
+        <!--Campos que iniciam ocultos-->
+        <div id="campoPotenciaOnu" style="display: none;">
+          <label id="nome-potencia-onu" for="potencia-onu" class="hidden">POTÊNCIA ONU:</label>
+          <input type="text" id="potencia-onu" name="potencia-onu"
+            placeholder="Potência do sinal óptico que chega até a ONU (Somente for identificado)" class="hidden">
+        </div>
+        <div id="campoPotenciaOlt" style="display: none;">
+          <label for="potenciaOlt">Potência OLT:</label>
+          <input type="text" id="potenciaOlt"
+            placeholder="Potência do sinal óptico que chega até a OLT (Somente for identificado)">
+        </div>
 
-      <div id="campoGpon" style="display: none;">
-        <label for="gpon">GPON:</label>
-        <input type="text" id="gpon" name="gpon">
-      </div>
+        <div id="campoGpon" style="display: none;">
+          <label for="gpon">GPON:</label>
+          <input type="text" id="gpon" name="gpon">
+        </div>
 
-      <div id="campoPPPoE" style="display: none;">
-        <label for="pppoe">PPPoE:</label>
-        <input type="text" id="pppoe">
-      </div>
+        <div id="campoPPPoE" style="display: none;">
+          <label for="pppoe">PPPoE:</label>
+          <input type="text" id="pppoe">
+        </div>
 
-      <div id="campoModelo" style="display: none;">
-        <label for="modelo">MODELO DO EQUIPAMENTO:</label>
-        <input type="text" id="modelo" name="modelo">
-      </div>
+        <div id="campoModelo" style="display: none;">
+          <label for="modelo">MODELO DO EQUIPAMENTO:</label>
+          <input type="text" id="modelo" name="modelo">
+        </div>
 
 
-      <div id="campoAlarmes" style="display: none;">
-        <label id="nome-alarmes-equipamento" for="alarmes-equipamento" class="hidden">ALARMES DO EQUIPAMENTO:</label>
-        <input type="text" id="alarmes-equipamento" name="alarmes-equipamento"
-          placeholder="Alarmes recentes registrados no equipamento" class="hidden">
-      </div>
+        <div id="campoAlarmes" style="display: none;">
+          <label id="nome-alarmes-equipamento" for="alarmes-equipamento" class="hidden">ALARMES DO EQUIPAMENTO:</label>
+          <input type="text" id="alarmes-equipamento" name="alarmes-equipamento"
+            placeholder="Alarmes recentes registrados no equipamento" class="hidden">
+        </div>
 
-      <div id="campoOcorre" style="display: none;">
-        <label id="nome-dispositivos-sem-internet" for="dispositivos-sem-internet" class="hidden">DISPOSITIVOS EM QUE
-          OCORRE:</label>
-        <input type="text" id="dispositivos-sem-internet" name="dispositivos-sem-internet" class="hidden"
-          placeholder="Dispositivos que o cliente relata estar sem internet ou lentidão">
-      </div>
+        <div id="campoOcorre" style="display: none;">
+          <label id="nome-dispositivos-sem-internet" for="dispositivos-sem-internet" class="hidden">DISPOSITIVOS EM QUE
+            OCORRE:</label>
+          <input type="text" id="dispositivos-sem-internet" name="dispositivos-sem-internet" class="hidden"
+            placeholder="Dispositivos que o cliente relata estar sem internet ou lentidão">
+        </div>
 
-      <div id="campoTemp" style="display: none;">
-        <label for="Temp">Temperatura:</label>
-        <input type="text" id="Temp" placeholder="Temperatura registrada no equipamento">
-      </div>
+        <div id="campoTemp" style="display: none;">
+          <label for="Temp">Temperatura:</label>
+          <input type="text" id="Temp" placeholder="Temperatura registrada no equipamento">
+        </div>
 
-      <div id="campoOutros" style="display: none;">
-        <label for="Outros">Outros:</label>
-        <input type="text" id="Outros">
+        <div id="campoOutros" style="display: none;">
+          <label for="Outros">Outros:</label>
+          <input type="text" id="Outros">
+        </div>
+
       </div>
 
     </div>
+   
+
+      <!--checkbox-->
 
 
-    <!--checkbox-->
 
-
-
-    <label for="validador">Validador:</label>
-    <input type="text" id="validador" name="validador">
-    <div>
+      <label for="validador">Validador:</label>
+      <input type="text" id="validador" name="validador">
+      <div>
       <!--creditos-->
       <footer>
-          <p id="creditos">Desenvolvido por Matheus Henrique</p>
+          <p id="creditos">Desenvolvido por <b>Matheus Henrique</b></p>
           <a id="github-icon-link" href="https://github.com/matheus-hash
-" target="_blank">
-              <i id="github-icon" class="fab fa-github"></i> <!-- Ícone do GitHub -->
+      " target="_blank">
+              <i id="github-icon" class="fab fa-github"></i> <!-- Ícone do           GitHub -->
           </a>
       </footer>
       
@@ -199,7 +216,7 @@
           #creditos {
               margin: 0;
               font-size: 14px;
-              margin-right: 10px; /* Adiciona margem à direita para separar o ícone do texto */
+              margin-right: 10px; /* Adiciona margem à direita para separar o       ícone do texto */
           }
 
           #github-icon {
@@ -220,19 +237,19 @@
               padding: 10px;
               border-radius: 10px;
               box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-              transition: background-color 0.3s ease; /* Adiciona uma transição suave para a mudança de cor de fundo */
+              transition: background-color 0.3s ease; /* Adiciona uma                 transição suave para a mudança de cor de fundo */
               display: flex;
               align-items: center;
           }
 
           footer:hover {
-              background-color: #d3d3d3; /* Altera a cor de fundo ao passar o mouse */
+              background-color: #d3d3d3; /* Altera a cor de fundo ao passar o         mouse */
           }
 
           #creditos {
               margin: 0;
               font-size: 14px;
-              margin-right: 10px; /* Adiciona margem à direita para separar o ícone do texto */
+              margin-right: 10px; /* Adiciona margem à direita para separar o         ícone do texto */
           }
 
           #github-icon {
@@ -244,16 +261,16 @@
               text-decoration: none; /* Remove a sublinhado padrão do link */
               color: #333; /* Cor do ícone */
           }
-      </style>
+          </style>
       
       
       <!--fim dos creditos-->
       
-      <button id="btnConcluir" class="btn btn-white btn-animated text-box">Concluir</button>
-    </div>
+      <button id="btnConcluir" class="btn btn-white btn-animated text-      box">Concluir</button>
+      </div>
 
-    <!-- Janela modal -->
-    <div id="modal" class="modal">
+      <!-- Janela modal -->
+      <div id="modal" class="modal">
       <div class="modal-content">
         <span class="fechar" id="btnFecharModal">&times;</span>
         <textarea id="textoExibido" rows="10"></textarea>

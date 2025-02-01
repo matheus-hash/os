@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
        /* Adiciona um fundo de gradiente */
-   background-image: linear-gradient(to right, #5fd4de, #eb39f8);/* Substitua pelo nome da imagem */
+   background-image: linear-gradient(to right, #5366f9, #a432ae);/* Substitua pelo nome da imagem */
   background-size: cover;
   background-repeat: no-repeat;
   
@@ -19,7 +19,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     /* Adiciona sombra5 ao formulário */
-    background: linear-gradient(90deg, #e8e8e8, #f0f0f0);
+    background: linear-gradient(90deg, #f7f7f7, #ffffff);
     /* Adiciona um fundo de gradiente */
     margin-top: 30px;
   margin-bottom: 30px;
@@ -31,7 +31,7 @@ body {
     margin-bottom: 20px;
      font-family: Poppins-Bold;
     font-size: 39px;
-    background: linear-gradient(270deg, #6f7bff 0, #9372ff 8.33%, #af68f4 16.67%, #c55de6 25%, #d752d7 33.33%, #e647c6 41.67%, #f23cb5 50%, #fb33a3 58.33%, #ff2d91 66.67%, #ff2c7e 75%, #ff306c 83.33%, #ff385b 91.67%, #fe4149 100%);
+    background: linear-gradient(270deg, #ffffff 0, #9372ff 8.33%, #af68f4 16.67%, #c55de6 25%, #d752d7 33.33%, #e647c6 41.67%, #f23cb5 50%, #fb33a3 58.33%, #ff2d91 66.67%, #ff2c7e 75%, #ff306c 83.33%, #ff385b 91.67%, #fe4149 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -69,8 +69,8 @@ body {
     width: 100%;
     padding: 8px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    border: 1px solid #999999;
+    border-radius: 20px;
   }
 
   input,
@@ -78,8 +78,8 @@ body {
     width: 97%;
     padding: 8px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    border: 1px solid #999999;
+    border-radius: 20px;
   
   }
 input:focus,
@@ -181,4 +181,18 @@ textarea:focus {
 }
 .form-row .form-group{
   flex-basis: 48%;
+}
+
+/* Estilos opcionais para sua mensagem */
+.mensagem {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #f3f3f3;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
 }
