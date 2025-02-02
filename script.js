@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   tipoOS.addEventListener("change", function() {
     if (tipoOS.value === "manutencao" || tipoOS.value === "manutencaolink" ) {
-      var fraseOrientacao = "Verificar a integridade do equipamento ,dos cabos e dos conectores. Efetuar todos os testes de velocidade junto ao cliente e com o setor de Autenticação";
+      var fraseOrientacao = "Verificar a qualidade do equipamento ,dos cabos e dos conectores. Efetuar todos os testes de velocidade junto ao cliente e com o setor de Autenticação";
       orientacaoInput.value = fraseOrientacao;
 
       } else if (tipoOS.value === "manutencaopotencia") {
