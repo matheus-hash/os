@@ -154,35 +154,67 @@ function isChecked(checkboxId) {
 
 // Função para exibir/ocultar campos com base nas opções marcadas
 function toggleCampos() {
-  // Definição dos campos e suas respectivas IDs
-  const campos = [
-    { id: 'campoPotenciaOnu', checkbox: 'chkPotenciaOnu' },
-    { id: 'campoGpon', checkbox: 'chkGpon' },
-    { id: 'campoPPPoE', checkbox: 'chkPPPoE' },
-    { id: 'campoAlarmes', checkbox: 'chkAlarmes' },
-    { id: 'campoModelo', checkbox: 'chkModelo' },
-    { id: 'campoOcorre', checkbox: 'chkOcorre' },
-    { id: 'campoTemp', checkbox: 'chkTemperatura' },
-    { id: 'campoOutros', checkbox: 'chkOutros' },
-    { id: 'campoPotenciaOlt', checkbox: 'chkPotenciaOlt' }
-  ];
+  // Potência ONU
+  if (isChecked('chkPotenciaOnu')) {
+    document.getElementById('campoPotenciaOnu').style.display = 'block';
+  } else {
+    document.getElementById('campoPotenciaOnu').style.display = 'none';
+  }
 
-  // Itera sobre a lista de campos
-  campos.forEach(campo => {
-    const element = document.getElementById(campo.id);
-    if (isChecked(campo.checkbox)) {
-      element.style.display = 'block';
-    } else {
-      element.style.display = 'none';
-    }
-  });
+  // GPON
+  if (isChecked('chkGpon')) {
+    document.getElementById('campoGpon').style.display = 'block';
+  } else {
+    document.getElementById('campoGpon').style.display = 'none';
+  }
+
+  // PPPoE
+  if (isChecked('chkPPPoE')) {
+    document.getElementById('campoPPPoE').style.display = 'block';
+  } else {
+    document.getElementById('campoPPPoE').style.display = 'none';  }
+  if (isChecked('chkAlarmes')) {
+    document.getElementById('campoAlarmes').style.display = 'block';
+  } else {
+    document.getElementById('campoAlarmes').style.display = 'none';
+  }
+
+  if (isChecked('chkModelo')) {
+    document.getElementById('campoModelo').style.display = 'block';
+  } else {
+    document.getElementById('campoModelo').style.display = 'none';
+  }
+
+  if (isChecked('chkocorre')) {
+    document.getElementById('campoOcorre').style.display = 'block';
+  } else {
+    document.getElementById('campoOcorre').style.display = 'none';
+  }
+
+  if (isChecked('chkTemperatura')) {
+    document.getElementById('campoTemp').style.display = 'block';
+  } else {
+    document.getElementById('campoTemp').style.display = 'none';
+  }
+
+  if (isChecked('chkOutros')) {
+    document.getElementById('campoOutros').style.display = 'block';
+  } else {
+    document.getElementById('campoOutros').style.display = 'none';
+  }
+
+  if (isChecked('chkModelo')) {
+    document.getElementById('campoModelo').style.display = 'block';
+  } else {
+    document.getElementById('campoModelo').style.display = 'none';
+  }
+  // Potência OLT
+  if (isChecked('chkPotenciaOlt')) {
+    document.getElementById('campoPotenciaOlt').style.display = 'block';
+  } else {
+    document.getElementById('campoPotenciaOlt').style.display = 'none';
+  }
 }
-
-// Função auxiliar para verificar se o checkbox está marcado
-function isChecked(id) {
-  return document.getElementById(id).checked;
-}
-
 
 // Adicione um ouvinte de evento para os checkboxes
 document.getElementById('chkPotenciaOnu').addEventListener('change', toggleCampos);
